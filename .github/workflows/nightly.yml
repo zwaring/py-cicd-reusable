@@ -1,0 +1,15 @@
+name: Nightly
+
+on:
+  schedule:
+    - cron: "0 7 * * *"
+
+permissions:
+  contents: read
+
+jobs:
+  nightly:
+    uses: ./.github/workflows/_reusable-ci.yml
+    with:
+      python-version: "3.11"
+      run-audit: true
